@@ -1,0 +1,10 @@
+<?php
+// Fetch the content from another site
+$remoteContent = file_get_contents('https://bluebrad.github.io/service-news/');
+
+// Wrap the content in a scoped container with proper CSS for centering
+$wrappedContent = '<div id="bluebrad-widget-container" style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center;">' . $remoteContent . '</div>';
+
+// Output the wrapped content
+echo $wrappedContent;
+?>
