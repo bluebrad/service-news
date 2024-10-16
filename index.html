@@ -13,6 +13,42 @@
         <div class="bluebrad-widget-title"><a href="https://status.bluebrad.net">Bluebrad Services</a></div>
         <div class="bluebrad-widget-message">All systems are currently operational. status.bluebrad.net</div>
         <div class="bluebrad-widget-status">System Status: OKAY</div>
+        <div class="bluebrad-widget-message">
+            <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://bluebrad.github.io/service-news/domains.xml')
+                .then(response => response.text())
+                .then(xmlText => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                    const domains = xmlDoc.getElementsByTagName("domain");
+
+                    const domainListDiv = document.getElementById('domainList');
+                    const ul = document.createElement('ul');
+
+                    for (let i = 0; i < domains.length; i++) {
+                        const domainName = domains[i].getElementsByTagName("name")[0].textContent;
+                        const domainUrl = domains[i].getElementsByTagName("url")[0].textContent;
+
+                        const li = document.createElement('li');
+                        const button = document.createElement('a');
+
+                        button.href = domainUrl;
+                        button.textContent = domainName;
+                        button.className = 'button';
+                        button.target = '_blank'; // Open link in a new tab
+
+                        li.appendChild(button);
+                        ul.appendChild(li);
+                    }
+
+                    domainListDiv.appendChild(ul);
+                })
+                .catch(error => console.error('Error fetching or parsing XML:', error));
+        });
+    </script>
+
+        </div>
         <!--<div class="bluebrad-widget-error">
         System Status: error
     </div>
