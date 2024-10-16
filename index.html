@@ -3,90 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluebrad Status Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bluebrad Services - System Status</title>
     <style>
-        body {
+        /* Start of widget CSS */
+        .bluebrad-widget-container {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        .status {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px;
+            background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
-            width: 250px;
+            padding: 20px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .checkmark {
-            color: green;
-            font-size: 20px;
+
+        .bluebrad-widget-title {
+            color: #336699;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bluebrad-widget-message {
+            font-size: 16px;
+            color: #224488;
+            text-align: center;
+        }
+
+        .bluebrad-widget-status {
+            font-size: 18px;
+            color: #4CAF50;
             font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
         }
-        .crossmark {
-            color: red;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .snapshot img {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
-            margin-top: 10px;
-        }
+        /* End of widget CSS */
     </style>
 </head>
 <body>
-    <h1>Service Status</h1>
-    <div id="domain-statuses"></div>
-
-    <script>
-        async function fetchDomainStatus() {
-            // Fetch the XML file
-            const response = await fetch('domains.xml');
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlText, 'application/xml');
-            
-            // Get the domains from the XML
-            const domains = xml.getElementsByTagName('domain');
-            const statusContainer = document.getElementById('domain-statuses');
-
-            for (let i = 0; i < domains.length; i++) {
-                const name = domains[i].getElementsByTagName('name')[0].textContent;
-                const url = domains[i].getElementsByTagName('url')[0].textContent;
-
-                // Create a container for the domain status
-                const statusDiv = document.createElement('div');
-                statusDiv.classList.add('status');
-                statusDiv.innerHTML = `<h3>${name}</h3><p id="status-${i}">Checking...</p><div class="snapshot" id="snapshot-${i}"></div>`;
-                statusContainer.appendChild(statusDiv);
-
-                // Check the domain status using a HEAD request
-                checkDomainStatus(url, i);
-            }
-        }
-
-        async function checkDomainStatus(url, index) {
-            try {
-                const response = await fetch(url, { method: 'HEAD' });
-                const statusElement = document.getElementById(`status-${index}`);
-                const snapshotElement = document.getElementById(`snapshot-${index}`);
-
-                if (response.ok) {
-                    statusElement.innerHTML = `<span class="checkmark">✔</span> Up`;
-                    // Optionally take a snapshot
-                    const snapshotUrl = `https://api.thumbnail.ws/api/abcd1234/thumbnail/get?url=${url}&width=300`; // Replace with a real service API
-                    snapshotElement.innerHTML = `<img src="${snapshotUrl}" alt="${url} snapshot">`;
-                } else {
-                    statusElement.innerHTML = `<span class="crossmark">✖</span> Down`;
-                }
-            } catch (error) {
-                document.getElementById(`status-${index}`).innerHTML = `<span class="crossmark">✖</span> Down`;
-            }
-        }
-
-        fetchDomainStatus();
-    </script>
+    <div class="bluebrad-widget-container">
+        <div class="bluebrad-widget-title">Bluebrad Services</div>
+        <div class="bluebrad-widget-message">All systems are currently operational. <a href="https//status.bluebrad.net"></div>
+        <div class="bluebrad-widget-status">System Status: OKAY</div>
+        
+    </div>
 </body>
 </html>
