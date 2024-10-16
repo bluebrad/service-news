@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,45 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bluebrad Services - System Status</title>
     <style>
-        body {
+        /* Start of widget CSS */
+        .bluebrad-widget-container {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
             background-color: #fff;
-            padding: 30px;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+
+        .bluebrad-widget-title {
             color: #4CAF50;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            color: #333;
-        }
-        .status {
             font-size: 24px;
-            color: #4CAF50;
-            margin-top: 20px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
         }
+
+        .bluebrad-widget-message {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+
+        .bluebrad-widget-status {
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+        }
+        /* End of widget CSS */
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bluebrad Services</h1>
-        <p>Welcome to Bluebrad Services! All systems are currently operational.</p>
-        <div class="status">System Status: OKAY</div>
+    <div class="bluebrad-widget-container">
+        <div class="bluebrad-widget-title">Bluebrad Services</div>
+        <div class="bluebrad-widget-message">All systems are currently operational.</div>
+        <div class="bluebrad-widget-status">System Status: OKAY</div>
     </div>
 </body>
 </html>
