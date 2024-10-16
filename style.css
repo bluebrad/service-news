@@ -24,9 +24,9 @@ font-size: 24px;
             margin-bottom: 10px;
             text-align: center;
         font-family: 'Roboto', Arial, sans-serif; /* Apply Roboto font here */
-        }
+}
 
-        .bluebrad-widget-message {
+.bluebrad-widget-message {
             font-size: 16px;
             color: #224488;
             text-align: center;
@@ -41,3 +41,11 @@ font-size: 24px;
             margin-top: 15px;
             text-align: center;
         }
+.bluebrad-widget-error { /*Error Status*/
+font-size: 18px;
+color: #cc0000;
+font-weight: bold;
+font-family: 'Roboto', Arial, sans-serif; /* Apply Roboto font here */
+margin-top: 15px;
+text-align: center;
+}
