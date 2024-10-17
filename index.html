@@ -5,60 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bluebrad Services - System Status</title>
-
-<link rel="stylesheet" href="https://bluebrad.github.io/service-news/style.css">
+    <link rel="stylesheet" href="https://bluebrad.github.io/service-news/style.css">
+    <style>
+        ul {
+            list-style-type: none; /* Removes bullet points */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+        .button {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div class="bluebrad-widget-wrapper"> <div class="bluebrad-widget-container">
-        <div class="bluebrad-widget-title"><a href="https://status.bluebrad.net">Bluebrad Services</a></div>
-        <div class="bluebrad-widget-message">All systems are currently operational. status.bluebrad.net</div>
-        <div class="bluebrad-widget-status">System Status: OKAY</div>
-        <div class="bluebrad-widget-message">
-            <h1>Domain List</h1>
-    <div id="domainList"></div>
-            <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://bluebrad.github.io/service-news/domains.xml')
-                .then(response => response.text())
-                .then(xmlText => {
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-                    const domains = xmlDoc.getElementsByTagName("domain");
+    <div class="bluebrad-widget-wrapper">
+        <div class="bluebrad-widget-container">
+            <div class="bluebrad-widget-title">
+                <a href="https://status.bluebrad.net">Bluebrad Services</a>
+            </div>
+            <div class="bluebrad-widget-message">All systems are currently operational. status.bluebrad.net</div>
+            <div class="bluebrad-widget-status">System Status: OKAY</div>
+            <div class="bluebrad-widget-message">
+                <h1>Domain List</h1>
+                <div id="domainList"></div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        fetch('https://bluebrad.github.io/service-news/domains.xml')
+                            .then(response => response.text())
+                            .then(xmlText => {
+                                const parser = new DOMParser();
+                                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                                const domains = xmlDoc.getElementsByTagName("domain");
 
-                    const domainListDiv = document.getElementById('domainList');
-                    const ul = document.createElement('ul');
+                                const domainListDiv = document.getElementById('domainList');
+                                const ul = document.createElement('ul');
 
-                    for (let i = 0; i < domains.length; i++) {
-                        const domainName = domains[i].getElementsByTagName("name")[0].textContent;
-                        const domainUrl = domains[i].getElementsByTagName("url")[0].textContent;
+                                for (let i = 0; i < domains.length; i++) {
+                                    const domainName = domains[i].getElementsByTagName("name")[0].textContent;
+                                    const domainUrl = domains[i].getElementsByTagName("url")[0].textContent;
 
-                        const li = document.createElement('li');
-                        const button = document.createElement('a');
+                                    const li = document.createElement('li');
+                                    const button = document.createElement('a');
 
-                        button.href = domainUrl;
-                        button.textContent = domainName;
-                        button.className = 'button';
-                        button.target = '_blank'; // Open link in a new tab
+                                    button.href = domainUrl;
+                                    button.textContent = domainName;
+                                    button.className = 'button';
+                                    button.target = '_blank'; // Open link in a new tab
 
-                        li.appendChild(button);
-                        ul.appendChild(li);
-                    }
+                                    li.appendChild(button);
+                                    ul.appendChild(li);
+                                }
 
-                    domainListDiv.appendChild(ul);
-                })
-                .catch(error => console.error('Error fetching or parsing XML:', error));
-        });
-    </script>
-
+                                domainListDiv.appendChild(ul);
+                            })
+                            .catch(error => console.error('Error fetching or parsing XML:', error));
+                    });
+                </script>
+            </div>
+            <!--<div class="bluebrad-widget-error">
+            System Status: error
         </div>
-        <!--<div class="bluebrad-widget-error">
-        System Status: error
+        <div class="bluebrad-widget-message">
+            There is a current Dissruption to my services
+        </div>-->
+            <br>
+            <div class="bluebrad-widget-message">
+                If you need any help please see <a href="https://support.bluebrad.net">support.bluebrad.net</a>
+            </div>
+        </div>
     </div>
-<div class="bluebrad-widget-message">
-        There is a current Dissruption to my services
-    </div>-->
-        <br>
-        <div class="bluebrad-widget-message">If you need any help please see <a href="Https://support.bluebrad.net">support.bluebrad.net</a></div>
-        </div></div>
 </body>
 </html>
