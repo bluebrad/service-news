@@ -7,6 +7,12 @@ width: 100%; /* Full width of the parent */
 height: 100%; /* Full height of the parent */
 font-family: 'Roboto', Arial, sans-serif; /* Apply Roboto font here */
 }
+.domain-list {
+            list-style-type: none; /* Removes bullet points */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+       
  .button {
             display: inline-block;
             margin: 5px;
