@@ -7,7 +7,7 @@
     width: 100%; /* Full width of the parent */
     height: 100%; /* Full height of the parent */
     font-family: 'Roboto', Arial, sans-serif; /* Apply Roboto font here */
-    background-color: #f0f0f0; /* Add a light background color to make the container stand out */
+    background-color: none; /* Add a light background color to make the container stand out */
 }
 
 .bluebrad-widget-container {
