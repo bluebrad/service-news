@@ -6,35 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bluebrad Services - System Status</title>
     <link rel="stylesheet" href="https://bluebrad.github.io/service-news/style.css">
-    <style>
-        ul {
-            list-style-type: none; /* Removes bullet points */
-            padding: 0; /* Removes default padding */
-            margin: 0; /* Removes default margin */
-        }
-        .button {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-        }
-    </style>
 </head>
 <body>
     <div class="bluebrad-widget-wrapper">
         <div class="bluebrad-widget-container">
             <div class="bluebrad-widget-title">
-                <a href="https://status.bluebrad.net">Bluebrad Services</a>
+                <a href="https://status.bluebrad.net" class="widget-link">Bluebrad Services</a>
             </div>
-            <div class="bluebrad-widget-message">All systems are currently operational. status.bluebrad.net</div>
+            <div class="bluebrad-widget-message">All systems are currently operational. <a href="https://status.bluebrad.net" class="widget-link">status.bluebrad.net</a></div>
             <div class="bluebrad-widget-status">System Status: OKAY</div>
-            <div class="bluebrad-widget-message">
-                <h1>Domain List</h1>
-                <div id="domainList"></div>
+            <div class="bluebrad-widget-message domain-list-wrapper">
+                <h1 class="domain-list-title">Domain List</h1>
+                <div id="domainList" class="domain-list-container"></div>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         fetch('https://bluebrad.github.io/service-news/domains.xml')
@@ -46,12 +29,14 @@
 
                                 const domainListDiv = document.getElementById('domainList');
                                 const ul = document.createElement('ul');
+                                ul.className = 'domain-list';
 
                                 for (let i = 0; i < domains.length; i++) {
                                     const domainName = domains[i].getElementsByTagName("name")[0].textContent;
                                     const domainUrl = domains[i].getElementsByTagName("url")[0].textContent;
 
                                     const li = document.createElement('li');
+                                    li.className = 'domain-list-item';
                                     const button = document.createElement('a');
 
                                     button.href = domainUrl;
@@ -73,11 +58,11 @@
             System Status: error
         </div>
         <div class="bluebrad-widget-message">
-            There is a current Dissruption to my services
+            There is a current disruption to my services
         </div>-->
             <br>
             <div class="bluebrad-widget-message">
-                If you need any help please see <a href="https://support.bluebrad.net">support.bluebrad.net</a>
+                If you need any help please see <a href="https://support.bluebrad.net" class="widget-link">support.bluebrad.net</a>
             </div>
         </div>
     </div>
