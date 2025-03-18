@@ -1,68 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <domains>
-
-<domain>
-<name>Shob Bluebrad</name>
-<url>https://Shop.bluebrad.com</url>
-</domain>
-  
-<domain>
-<name>buy-trophies.com</name>
-<url>https://buy-trophies.com</url>
-</domain>  
-<domain>
-<name>Videye Marketing</name>
-<url>https://VideyeMarketing.com</url>
-</domain>
-  
-<domain>
-<name>The Banner Pro</name>
-<url>https://TheBannerPro.com</url>
-</domain>
-
-<domain>
-<name>Go Print Factory</name>
-<url>https://goprintfactory.com</url>
-</domain>
-
-<domain>
-<name>Rock Bottom Offroad</name>
-<url>https://rockbottomoffroad.com</url>
-</domain>
-  <domain>
-<name>D&amp;R plumbing - Backflow Systems</name>
-<url>https://d-r-plumbing.com/</url>
-</domain>
-<domain>
-<name>Mantra Indian Cuisine</name>
-<url>https://mantrarestaurants.com/</url>
-</domain>
-<domain>
-<name>hoololi</name>
-<url>https://hoololi.org/</url>
-</domain>
-
-<domain>
-<name>Edmar Auto Insurance Services</name>
-<url>https://edmarinsurance.com/</url>
-</domain>
-
-  <domain>
-<name>Inland Prelim Services</name>
-<url>https://inlandprelim.com/</url>
-</domain>
-
-  <domain>
-<name>Airsoft Miggler</name>
-<url>https://miggler.net</url>
-</domain>
-  <domain>
-<name>BigBigMail</name>
-<url>https://BigBigMail.com</url>
-</domain>
-  <domain>
-<name>Vishnu Catering</name>
-<url>https://vishnucatering.com</url>
-</domain>
-  
+<domain><name>    Shob Bluebrad           </name><url>  https://Shop.bluebrad.com       </url></domain>
+<domain><name>    buy-trophies.com        </name><url>  https://buy-trophies.com        </url></domain>  
+<domain><name>    Videye Marketing        </name><url>  https://VideyeMarketing.com     </url></domain>  
+<domain><name>    The Banner Pro          </name><url>  https://TheBannerPro.com        </url></domain>
+<domain><name>    Go Print Factory        </name><url>  https://goprintfactory.com      </url></domain>
+<domain><name>    Yosemite Falls Cafe     </name><url>  https://yosemitefallscafe.com   </url></domain>  
+<domain><name>    Rock Bottom Offroad     </name><url>  https://rockbottomoffroad.com   </url></domain>  
+<domain><name>    D&amp;R plumbing        </name><url>  https://d-r-plumbing.com        </url></domain>  
+<domain><name>    Mantra Indian Cuisine   </name><url>  https://mantrarestaurants.com   </url></domain>
+<domain><name>    hoololi                 </name><url>  https://hoololi.org             </url></domain>
+<domain><name>    Edmar Auto Insurance    </name><url>  https://edmarinsurance.com      </url></domain>
+<domain><name>    Inland Prelim Services  </name><url>  https://inlandprelim.com        </url></domain>
+<domain><name>    The Miggler             </name><url>  https://miggler.net             </url></domain>
+<domain><name>    BigBigMail flyers       </name><url>  https://BigBigMail.com          </url></domain>
+<domain><name>    Vishnu Catering         </name><url>  https://vishnucatering.com      </url></domain>
+<domain><name>    FOP Riverside           </name><url>  https://fop8rca.org             </url></domain>
 </domains>
